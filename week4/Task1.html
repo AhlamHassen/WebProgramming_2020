@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     button
+     {
+         padding:13px;
+         border-radius:5px ;
+         color:white;
+         background-color: #252c27; 
+     }
+     button:hover
+     {
+         border:1px solid blue;
+         background-color: #333333;
+     }
+
+
+    </style>
+</head>
+<body>
+    <h1>JavaScript time!</h1>
+    <button type="button" onclick="time()">What is the time javascript? </button>
+    <p id="demo"></p>
+
+
+
+    <script>
+        function time()
+        {
+          document.getElementById("demo").innerHTML=Date();
+        }
+    </script>
+</body>
+</html>

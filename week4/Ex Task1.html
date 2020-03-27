@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1
+        {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="input1">
+    <b> <p id="p1">+</p></b>
+    <input type="number" id="input2">
+
+    <button type="button" onclick="clicked()">Click me</button>
+    <p> Value: <span id="demo"></span></p>
+
+ <script>
+
+    let field1=document.getElementById("input1");
+    let field2=document.getElementById("input2");
+   
+
+  function clicked()
+  { 
+    let v1=parseInt(field1.value);
+    let v2=Number(field2.value);
+
+    document.getElementById("demo").innerHTML=v1+v2;
+  }
+
+ </script>
+
+
+
+</body>
+</html>
