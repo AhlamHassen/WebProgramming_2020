@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *
+        {
+            box-sizing:border-box;
+        }
+        #d1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            
+        }
+
+        #d2 {
+            width: 500px;
+            height: 100vh;
+            padding:20px;
+            border:1px solid black;
+           
+        }
+
+        input {
+            width: 300px;
+            height: 28px;
+            padding:8px;
+        }
+
+        #button 
+        {
+            padding: 4px;
+            width: 50px;
+        }
+        
+        #inputButton
+        {
+            text-align: center;
+        }
+
+        p
+        {
+            text-align:left;
+            height: 25px;
+            width:400px;
+            background-color: cadetblue;
+            margin-left:30px;
+            padding-left:10px;
+            margin-top: 20px;
+        }
+        p:hover
+        {
+            background-color: burlywood;
+            height: 25px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id="d1">
+
+
+        <div id="d2">
+              <div id="inputButton">
+                <input type="text" id="input" placeholder="New Item ...">
+                <button id="button" onclick="clicked()">Add</button>
+             </div>
+             
+        </div>
+
+    </div>
+
+    <script>
+        let input=document.getElementById("input");
+        
+        function clicked()
+        {
+           let newElement = document.createElement("p");
+           let content = document.createTextNode(input.value);
+           newElement.appendChild(content);
+           let inBox= document.getElementById("d2");
+           inBox.appendChild(newElement);
+           input.value="";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

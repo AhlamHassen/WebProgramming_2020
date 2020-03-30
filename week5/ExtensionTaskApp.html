@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #inputButtonMenu {
+            margin-top: 20px;
+        }
+
+        #input {
+            width: 285px;
+
+        }
+
+        select {
+            width: 402px;
+        }
+
+        #button {
+            width: 50px;
+        }
+
+        #body {
+            display: flex;
+            flex-direction: row;
+            padding:
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .rowdivs {
+
+            width: 33%;
+            margin: 10px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        p {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="inputButtonMenu">
+            <input id="input" placeholder="New Item ...">
+            <button type="button" class="button" onclick="clicked()">Add</button>
+            <button type="button" class="button" onclick="clearAll()">Clear All</button><br />
+            <select id="select">
+                <option>Shopping List</option>
+                <option>Assignments to do</option>
+                <option>Places to go</option>
+
+            </select>
+        </div>
+    </div>
+    <div id="body">
+        <div id="d1" class="rowdivs" value="shopping List">
+            <h1>Shopping List</h1>
+        </div>
+        <div id="d2" class="rowdivs" value="Assignments to do">
+            <h1>Assignments to do</h1>
+        </div>
+        <div id="d3" class="rowdivs" value="Places to go">
+            <h1>Places to go</h1>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById("input");
+        let d1 = document.getElementById("d1");
+        let d2 = document.getElementById("d2");
+        let d3 = document.getElementById("d3");
+        let select = document.getElementById("select");
+
+
+
+        function clicked() {
+
+            let newElement = document.createElement("p");
+            let content = document.createTextNode(input.value);
+            newElement.appendChild(content);
+
+
+            if (select.value == "Shopping List") {
+                let box1 = document.getElementById("d1");
+                box1.appendChild(newElement);
+
+
+            }
+            else if (select.value == "Assignments to do") {
+                let box1 = document.getElementById("d2");
+                box1.appendChild(newElement);
+
+            }
+            else {
+                let box1 = document.getElementById("d3");
+                box1.appendChild(newElement);
+
+            }
+
+            input.value = "";
+
+        }
+
+
+     window.onload=function clearAll()
+     {
+        var elem = document.getElementsByTagName("p");
+        elem.removeChild();
+     }
+    </script>
+</body>
+
+</html>
