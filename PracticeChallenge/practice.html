@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/all.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #bcd5ef;
+        }
+
+        .Container {
+            background-color: #f2f2f2;
+            width: 60%;
+            height: 150vh;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        article {
+            float: left;
+            width: 80%;
+        }
+
+        section {
+            margin-top: 10px;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #content {
+            height: 110vh;
+            padding: 30px;
+            margin-top: -20px;
+        }
+
+        #left {
+            float: left;
+            width: 70%;
+        }
+
+        #right {
+            float: right;
+            width: 28%;
+            padding: 10px;
+        }
+
+        #img {
+            float: left;
+            width: 15%;
+            margin: 10px;
+        }
+
+        #name {
+            font-size: 30px;
+            font-weight: bolder;
+            padding-top: 20px;
+        }
+
+        #Ocuppation {
+            font-weight: lighter;
+            margin-top: -30px;
+        }
+
+        .headings {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        i {
+            font-size: 15px;
+        }
+
+        .bold2p 
+        {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: -18px;
+        }
+
+        .datep 
+        {
+            font-size: 15px;
+            margin-top: -15px;
+            font-style: italic;
+        }
+
+        .hed1
+        {
+            margin-top: -15px;
+        }
+
+        hr
+        {
+            border:3px solid #49b1ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+        <section>
+            <div id="img">
+                <img src="OIP.jpg" alt="Adem's picture">
+            </div>
+            <article>
+                <p id="name">Adam smith</p>
+                <p id="Ocuppation">Software Engineer</p>
+            </article>
+
+        </section>
+        <div id="content">
+            <div id="left">
+
+                <p class="headings"><i class="fas fa-user"></i> &nbsp Profile</p>
+                <p>Experienced and driven Financial Analyst with an impressive background<br />
+                    of managing multi million dollar budgets while developing and providing <br />
+                    analysis and support within product development departments. Worked to reduce business
+                    expenses and develop logical and advantageous operating plan budgetss. Experience creating
+                    quarterly accruals based on trends and forecsted expenses.
+                </p>
+
+                <p class="headings"><i class="fas fa-briefcase"></i> &nbsp Work History</p>
+                <p class="bold2p">Financial Analyst at GEO Corp. , New York</p>
+                <p class="datep"> October2012 - September 2019 </p>
+                <ul>
+                    <li>Created Budgets and ensured that labor and material
+                        costs were decresed by 15 persent </li>
+                    <li>Created financial reports on completed projects, indicating
+                        advantageous results and created analysis and performance reports<br/>for 
+                        managment teams to review.</li>
+                    <li> Generated financial statements including cash flow
+                        charts and <br/>balance sheets.</li>
+                    
+                </ul><br />
+
+                <p class="bold2p">Financial Analyst at Sisco Enterprises, New York</p>
+                <p class="datep"> September 2008- September 2012 </p>
+                <ul>
+                    <li> Provided reports,ad-hoc analysis, annual operating plan
+                     budgets, monthly cash forecasts, and revenue forecasts. </li>
+                    <li> Analyzed supplier contracts and advised in negotiations
+                       bringing budgets down by 6%</li>
+                    
+                </ul><br/>
+
+                <p class="headings hed1"><i class="fas fa-graduation-cap"></i> &nbsp Education</p>
+                <p class="bold2p">Bachelor of Finance, Villanova University, King of Prussia</p>
+                <p class="datep"> August 2004 - May 2008 </p>
+                 <ul><li>Graduated <i>suma cum laude.</i></li></ul> <br/>
+
+                <p class="bold2p"> High School Diploma, Camden High School, Camden</p>
+                <p class="datep"> September 2000 - June 2004</p><br/>
+
+            </div>
+
+            <div id="right">
+             
+                <p class="headings">Details</p>
+                <address>
+                <p>24 West 79th Street Apt#3B,New
+                York, 10024,United States,<br/>
+                (917) 407-5112<br/>
+                hw12@gmail.com </address>
+               </p>
+
+               <p class="headings">Skills</p>
+                <p>Financial analysis</p>
+                <hr/>
+                <p>Stratigic Planning</p>
+                <hr style="width:140px; margin-right:auto;"/>
+                <p>Trend Analysis</p>
+                <hr style="width:160px; margin-right:auto;"/>
+                <p>Market Assessment</p>
+                <hr style="width:110px; margin-right:auto;"/>
+                <p>Team Leadership</p>
+                <hr/>
+                
+                <p class="headings">Languages</p>
+                <p>Spanish</p>
+                <hr/>
+                <p>Arabic</p>
+                <hr style="width:100px; margin-right:auto;"/>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
