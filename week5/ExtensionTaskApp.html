@@ -50,6 +50,7 @@
 
         p {
             border: 1px solid black;
+            color: brown;
         }
     </style>
 </head>
@@ -82,9 +83,6 @@
 
     <script>
         let input = document.getElementById("input");
-        let d1 = document.getElementById("d1");
-        let d2 = document.getElementById("d2");
-        let d3 = document.getElementById("d3");
         let select = document.getElementById("select");
 
 
@@ -94,6 +92,7 @@
             let newElement = document.createElement("p");
             let content = document.createTextNode(input.value);
             newElement.appendChild(content);
+            
 
 
             if (select.value == "Shopping List") {
@@ -110,19 +109,34 @@
             else {
                 let box1 = document.getElementById("d3");
                 box1.appendChild(newElement);
-
+                
             }
 
             input.value = "";
+            newElement.onclick= function(){
+               
+               newElement.remove();
+                
+            }
+           
+               
+        
+        }
+
+
+        function clearAll() {
+            var elem = document.querySelectorAll("p");
+            
+            for (let i = 0; i < elem.length; i++) {
+                elem[i].remove();
+
+            }
+            
+
 
         }
 
 
-     window.onload=function clearAll()
-     {
-        var elem = document.getElementsByTagName("p");
-        elem.removeChild();
-     }
     </script>
 </body>
 

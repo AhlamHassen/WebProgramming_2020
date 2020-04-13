@@ -90,6 +90,10 @@
            let inBox= document.getElementById("d2");
            inBox.appendChild(newElement);
            input.value="";
+       
+           newElement.onclick= function(){
+               newElement.remove();
+           }
         }
 
 
