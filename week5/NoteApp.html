@@ -7,59 +7,55 @@
     <title>Document</title>
 
     <style>
-        *
-        {
-            box-sizing:border-box;
+        * {
+            box-sizing: border-box;
         }
+
         #d1 {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            
+
         }
 
         #d2 {
             width: 500px;
             height: 100vh;
-            padding:20px;
-            border:1px solid black;
-           
+            padding: 20px;
+            border: 1px solid black;
+
         }
 
         input {
             width: 300px;
             height: 28px;
-            padding:8px;
+            padding: 8px;
         }
 
-        #button 
-        {
+        #button {
             padding: 4px;
             width: 50px;
         }
-        
-        #inputButton
-        {
+
+        #inputButton {
             text-align: center;
         }
 
-        p
-        {
-            text-align:left;
+        p {
+            text-align: left;
             height: 25px;
-            width:400px;
+            width: 400px;
             background-color: cadetblue;
-            margin-left:30px;
-            padding-left:10px;
+            margin-left: 30px;
+            padding-left: 10px;
             margin-top: 20px;
         }
-        p:hover
-        {
+
+        p:hover {
             background-color: burlywood;
             height: 25px;
         }
-
     </style>
 
 
@@ -70,30 +66,29 @@
 
 
         <div id="d2">
-              <div id="inputButton">
+            <div id="inputButton">
                 <input type="text" id="input" placeholder="New Item ...">
                 <button id="button" onclick="clicked()">Add</button>
-             </div>
-             
+            </div>
+
         </div>
 
     </div>
 
     <script>
-        let input=document.getElementById("input");
-        
-        function clicked()
-        {
-           let newElement = document.createElement("p");
-           let content = document.createTextNode(input.value);
-           newElement.appendChild(content);
-           let inBox= document.getElementById("d2");
-           inBox.appendChild(newElement);
-           input.value="";
-       
-           newElement.onclick= function(){
-               newElement.remove();
-           }
+        let input = document.getElementById("input");
+
+        function clicked() {
+            let newElement = document.createElement("p");
+            let content = document.createTextNode(input.value);
+            newElement.appendChild(content);
+            let inBox = document.getElementById("d2");
+            inBox.appendChild(newElement);
+            input.value = "";
+
+            newElement.onclick = function () {
+                newElement.remove();
+            }
         }
 
 

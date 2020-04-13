@@ -92,7 +92,7 @@
             let newElement = document.createElement("p");
             let content = document.createTextNode(input.value);
             newElement.appendChild(content);
-            
+
 
 
             if (select.value == "Shopping List") {
@@ -109,29 +109,29 @@
             else {
                 let box1 = document.getElementById("d3");
                 box1.appendChild(newElement);
-                
+
             }
 
             input.value = "";
-            newElement.onclick= function(){
-               
-               newElement.remove();
-                
+            newElement.onclick = function () {
+
+                newElement.remove();
+
             }
-           
-               
-        
+
+
+
         }
 
 
         function clearAll() {
             var elem = document.querySelectorAll("p");
-            
+
             for (let i = 0; i < elem.length; i++) {
                 elem[i].remove();
 
             }
-            
+
 
 
         }
