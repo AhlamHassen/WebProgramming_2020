@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #ebe2d1;
+        }
+
+        #d1 , #d2 {
+            border-right:2px dashed #595858;
+            
+        }
+
         #container {
             display: flex;
             justify-content: center;
@@ -14,6 +28,7 @@
 
         #inputButtonMenu {
             margin-top: 20px;
+            padding:2px;
         }
 
         #input {
@@ -32,17 +47,19 @@
         #body {
             display: flex;
             flex-direction: row;
-            padding:
+
         }
 
         h1 {
             font-size: 20px;
             text-align: center;
+            letter-spacing: 3px;
+            font-family:'Handlee', cursive;
         }
 
         .rowdivs {
 
-            width: 33%;
+            width: 33.3%;
             margin: 10px;
             margin-left: 20px;
             padding: 10px;
@@ -50,7 +67,17 @@
 
         p {
             border: 1px solid black;
-            color: brown;
+            display: inline-block;
+            background-color: white;
+            border-radius: 3px;
+            width: 360px;
+            padding: 3px;
+        }
+
+        input[type=checkbox] {
+            width: 20px;
+            height: 18px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -88,27 +115,29 @@
 
 
         function clicked() {
-
+            let sdiv = document.createElement("DIV");
             let newElement = document.createElement("p");
             let content = document.createTextNode(input.value);
             newElement.appendChild(content);
 
+            let check = document.createElement("INPUT");
+            check.setAttribute("type", "checkbox");
 
+            sdiv.appendChild(check);
+            sdiv.appendChild(newElement);
 
             if (select.value == "Shopping List") {
                 let box1 = document.getElementById("d1");
-                box1.appendChild(newElement);
-
+                box1.appendChild(sdiv);
 
             }
             else if (select.value == "Assignments to do") {
                 let box1 = document.getElementById("d2");
-                box1.appendChild(newElement);
-
+                box1.appendChild(sdiv);
             }
             else {
                 let box1 = document.getElementById("d3");
-                box1.appendChild(newElement);
+                box1.appendChild(sdiv);
 
             }
 
@@ -116,13 +145,23 @@
             newElement.onclick = function () {
 
                 newElement.remove();
+                sdiv.remove();
+            }
+
+            check.onchange = function () {
+                if (this.checked) {
+                    newElement.style.backgroundColor = "#a76cb0";
+                    newElement.style.color = "white";
+                }
+                else {
+                    newElement.style.backgroundColor = "white";
+                    newElement.style.color = "black";
+                }
 
             }
 
 
-
         }
-
 
         function clearAll() {
             var elem = document.querySelectorAll("p");
@@ -132,9 +171,8 @@
 
             }
 
-
-
         }
+
 
 
     </script>
