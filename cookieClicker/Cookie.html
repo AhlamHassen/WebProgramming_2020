@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
     <style>
         #container {
             margin: 0;
@@ -15,16 +17,19 @@
         #d1 {
             float: left;
             width: 54%;
-            border: 1px solid black;
+            border: 2px dotted #eac7a1;
             margin: 0px 10px;
             height: 340px;
+            font-family: 'Handlee', cursive;
+            color: #865932;
+            font-weight: bold;
         }
 
         #d2 {
             float: left;
             width: 42%;
             height: 590px;
-            border: 1px solid black;
+            border: 2px dashed #eac7a1;
             align-items: center;
             padding: 10px;
         }
@@ -37,18 +42,21 @@
         }
 
         #d3 {
-            border: 1px solid black;
+            border: 2px solid #eac7a1;
             float: left;
             width: 54%;
             margin: 0px 10px;
             margin-top: -260px;
             height: 257px;
             overflow: scroll;
+            overflow-x: hidden;
+            background-color: rgba(234, 199, 161, 0.06);
         }
+
 
         img {
             margin-left: 250px;
-            margin-top: 20px;
+            margin-top: 5px;
             padding: 10px;
         }
 
@@ -66,10 +74,37 @@
 
         .update {
             text-align: center;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
             width: 430px;
             margin: 25px 80px 10px 80px;
-            padding-top: 20px;
+            padding-top: 30px;
+            background-color: #eac7a1;
+        }
+
+        #pOfd3 {
+            font-size: 20px;
+            padding: 5px 10px;
+            letter-spacing: 1px;
+            background-color: #ffffff;
+            font-family: 'Handlee', cursive;
+        }
+
+        .update,
+        #d1,
+        #d2,
+        #d3,
+        #pOfd3 {
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        #sp1 {
+            color: #ffffff;
+        }
+
+        .sp2 {
+            letter-spacing: 1px;
+            font-size: 20px;
+            font-family: 'Handlee', cursive;
         }
     </style>
 </head>
@@ -85,22 +120,32 @@
 
             <div id="d2">
                 <div id="up1" class="update">
-                    <p id="nameUp">One cookie in 3 second <br /> <span id="sp1"><span id="num">15</span> cookies</span>
+                    <p id="nameUp"><span class="sp2">One cookie in 3 second <br /></span><span id="sp1"><span
+                                id="num">15</span> cookies</span>
                     </p>
                 </div>
                 <div id="up2" class="update">
-                    <p id="nameUp">One cookie per second <br /> <span id="sp1"><span id="num2">50</span> cookies</span>
+                    <p id="nameUp"><span class="sp2">One cookie per second <br /></span> <span id="sp1"><span
+                                id="num2">50</span> cookies</span>
                     </p>
                 </div>
                 <div id="up3" class="update">
-                    <p id="nameUp">Two cookies per second <br /> <span id="sp1"><span id="num3">100</span>
+                    <p id="nameUp"><span class="sp2">Two cookies per second <br /></span><span id="sp1"><span
+                                id="num3">100</span>
                             cookies</span>
                     </p>
                 </div>
+                <div id="up4" class="update">
+                    <p id="nameUp"><span class="sp2">10 cookies per second </span><br /> <span id="sp1"><span
+                                id="num4">1000</span>
+                            cookies</span>
+                    </p>
+                </div>
+
             </div>
         </section>
         <div id="d3">
-
+            <p id="pOfd3"> </p>
         </div>
     </div>
 
@@ -109,24 +154,22 @@
         let update1 = document.getElementById("up1");
         let update2 = document.getElementById("up2");
         let update3 = document.getElementById("up3");
+        let update4 = document.getElementById("up4");
 
         let result = document.getElementById("demo");
-        let output = document.getElementById("d3");
+        let output = document.getElementById("pOfd3");
+        let outputDiv = document.getElementById("d3");
+
+        result.innerHTML = cookie + " cookies";
+
         let cookieLog = [];
         let txt = "", i;
-
-
 
         function clicked() {
 
             cookie++;
             document.getElementById("demo").innerHTML = cookie + " cookies";
-            cookieLog.push("The cookie was clicked");
-
-
-
-
-
+            cookieLog.push("The cookie was clicked . . .");
 
             update1.onclick = function () {
                 {
@@ -139,13 +182,13 @@
                             result.innerHTML = cookie + " cookies";
                         }, 2000);
 
-                        cookieLog.push("Update 1 was purchased, you now have 1 cookie added in 3 seconds");
+                        cookieLog.push("+1 Upgrade was purchased, you now have 1 cookie added in 3 seconds . . .");
                         let text = "", i;
                         for (i = 0; i < cookieLog.length; i++) {
                             text += cookieLog[i] + "<br/>";
                         }
                         output.innerHTML = text;
-                        output.scrollTop = output.scrollHeight;
+                        outputDiv.scrollTop = outputDiv.scrollHeight;
                     }
 
                     else {
@@ -164,18 +207,17 @@
                         result.innerHTML = cookie + " cookies";
                     }, 1000);
 
-                    cookieLog.push("Update 2 was purchased, you now have 1 cookie added per seconds");
-                        let text = "", i;
-                        for (i = 0; i < cookieLog.length; i++) {
-                            text += cookieLog[i] + "<br/>";
-                        }
+                    cookieLog.push("+1 Upgrade was purchased, you now have 1 cookie added per second . . .");
+                    let text = "", i;
+                    for (i = 0; i < cookieLog.length; i++) {
+                        text += cookieLog[i] + "<br/>";
+                    }
                     output.innerHTML = text;
-                    output.scrollTop = output.scrollHeight;
+                    outputDiv.scrollTop = outputDiv.scrollHeight;
                 }
                 else {
                     window.alert("you do not have enough cookies");
                 }
-
 
             }
             update3.onclick = function () {
@@ -188,13 +230,37 @@
                         result.innerHTML = cookie + " cookies";
                     }, 1000);
 
-                    cookieLog.push("Update 3 was purchased, you now have 2 cookie added per second");
-                        let text = "", i;
-                        for (i = 0; i < cookieLog.length; i++) {
-                            text += cookieLog[i] + "<br/>";
-                        }
+                    cookieLog.push("+1 Upgrade was purchased, you now have 2 cookies added per second . . .");
+                    let text = "", i;
+                    for (i = 0; i < cookieLog.length; i++) {
+                        text += cookieLog[i] + "<br/>";
+                    }
                     output.innerHTML = text;
-                    output.scrollTop = output.scrollHeight;
+                    outputDiv.scrollTop = outputDiv.scrollHeight;
+                }
+                else {
+                    window.alert("you do not have enough cookies");
+                }
+
+            }
+
+            update4.onclick = function () {
+                let value = parseInt(document.getElementById("num4").innerText);
+                if (cookie >= value) {
+                    cookie -= value;
+                    result.innerHTML = cookie + " cookies";
+                    setInterval(function () {
+                        cookie = cookie + 10;
+                        result.innerHTML = cookie + " cookies";
+                    }, 1000);
+
+                    cookieLog.push("+1 Upgrade was purchased, you now have 10 cookies added per second . . .");
+                    let text = "", i;
+                    for (i = 0; i < cookieLog.length; i++) {
+                        text += cookieLog[i] + "<br/>";
+                    }
+                    output.innerHTML = text;
+                    outputDiv.scrollTop = outputDiv.scrollHeight;
                 }
                 else {
                     window.alert("you do not have enough cookies");
@@ -208,15 +274,10 @@
                 text += cookieLog[i] + "<br/>";
             }
             output.innerHTML = text;
-            output.scrollTop = output.scrollHeight;
+            outputDiv.scrollTop = outputDiv.scrollHeight;
 
 
         }
-
-
-
-
-
 
 
     </script>
