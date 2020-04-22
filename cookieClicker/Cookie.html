@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #d1 {
+            float: left;
+            width: 54%;
+            border: 1px solid black;
+            margin: 0px 10px;
+            height: 340px;
+        }
+
+        #d2 {
+            float: left;
+            width: 42%;
+            height: 590px;
+            border: 1px solid black;
+            align-items: center;
+            padding: 10px;
+        }
+
+        section::after {
+            content: "";
+            clear: both;
+            display: table;
+
+        }
+
+        #d3 {
+            border: 1px solid black;
+            float: left;
+            width: 54%;
+            margin: 0px 10px;
+            margin-top: -260px;
+            height: 257px;
+            overflow: scroll;
+        }
+
+        img {
+            margin-left: 250px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        #demo {
+            text-align: center;
+            display: block;
+            font-size: 30px;
+        }
+
+        area,
+        .update,
+        a {
+            cursor: pointer;
+        }
+
+        .update {
+            text-align: center;
+            border: 1px solid #333;
+            width: 430px;
+            margin: 25px 80px 10px 80px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <section>
+            <div id="d1">
+                <p id="demo"></p>
+                <p id="demo1"></p>
+                <a> <img src="PerfectCookie.png" usemap="#map" onclick="clicked()"></a>
+            </div>
+
+            <div id="d2">
+                <div id="up1" class="update">
+                    <p id="nameUp">One cookie in 3 second <br /> <span id="sp1"><span id="num">15</span> cookies</span>
+                    </p>
+                </div>
+                <div id="up2" class="update">
+                    <p id="nameUp">One cookie per second <br /> <span id="sp1"><span id="num2">50</span> cookies</span>
+                    </p>
+                </div>
+                <div id="up3" class="update">
+                    <p id="nameUp">Two cookies per second <br /> <span id="sp1"><span id="num3">100</span>
+                            cookies</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div id="d3">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let cookie = 0;
+        let update1 = document.getElementById("up1");
+        let update2 = document.getElementById("up2");
+        let update3 = document.getElementById("up3");
+
+        let result = document.getElementById("demo");
+        let output = document.getElementById("d3");
+        let cookieLog = [];
+        let txt = "", i;
+
+
+
+        function clicked() {
+
+            cookie++;
+            document.getElementById("demo").innerHTML = cookie + " cookies";
+            cookieLog.push("The cookie was clicked");
+
+
+
+
+
+
+            update1.onclick = function () {
+                {
+                    let value = parseInt(document.getElementById("num").innerText);
+                    if (cookie >= value) {
+                        cookie -= value;
+                        result.innerHTML = cookie + " cookies";
+                        setInterval(function () {
+                            cookie++;
+                            result.innerHTML = cookie + " cookies";
+                        }, 2000);
+
+                        cookieLog.push("Update 1 was purchased, you now have 1 cookie added in 3 seconds");
+                        let text = "", i;
+                        for (i = 0; i < cookieLog.length; i++) {
+                            text += cookieLog[i] + "<br/>";
+                        }
+                        output.innerHTML = text;
+                        output.scrollTop = output.scrollHeight;
+                    }
+
+                    else {
+                        window.alert("you do not have enough cookies");
+                    }
+
+                }
+            }
+            update2.onclick = function () {
+                let value = parseInt(document.getElementById("num2").innerText);
+                if (cookie >= value) {
+                    cookie -= value;
+                    result.innerHTML = cookie + " cookies";
+                    setInterval(function () {
+                        cookie++;
+                        result.innerHTML = cookie + " cookies";
+                    }, 1000);
+
+                    cookieLog.push("Update 2 was purchased, you now have 1 cookie added per seconds");
+                        let text = "", i;
+                        for (i = 0; i < cookieLog.length; i++) {
+                            text += cookieLog[i] + "<br/>";
+                        }
+                    output.innerHTML = text;
+                    output.scrollTop = output.scrollHeight;
+                }
+                else {
+                    window.alert("you do not have enough cookies");
+                }
+
+
+            }
+            update3.onclick = function () {
+                let value = parseInt(document.getElementById("num3").innerText);
+                if (cookie >= value) {
+                    cookie -= value;
+                    result.innerHTML = cookie + " cookies";
+                    setInterval(function () {
+                        cookie = cookie + 2;
+                        result.innerHTML = cookie + " cookies";
+                    }, 1000);
+
+                    cookieLog.push("Update 3 was purchased, you now have 2 cookie added per second");
+                        let text = "", i;
+                        for (i = 0; i < cookieLog.length; i++) {
+                            text += cookieLog[i] + "<br/>";
+                        }
+                    output.innerHTML = text;
+                    output.scrollTop = output.scrollHeight;
+                }
+                else {
+                    window.alert("you do not have enough cookies");
+                }
+
+
+            }
+
+            let text = "", i;
+            for (i = 0; i < cookieLog.length; i++) {
+                text += cookieLog[i] + "<br/>";
+            }
+            output.innerHTML = text;
+            output.scrollTop = output.scrollHeight;
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
