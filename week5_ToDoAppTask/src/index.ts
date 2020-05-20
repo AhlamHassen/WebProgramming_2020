@@ -33,7 +33,6 @@ else {
             newElement.remove();
         }
     }
-
 }
 
 console.log("hello World");
