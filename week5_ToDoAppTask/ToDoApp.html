@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
@@ -68,7 +67,6 @@
         }
     </style>
 
-
 </head>
 
 <body>
@@ -79,32 +77,13 @@
         <div id="d2">
             <div id="inputButton">
                 <input type="text" id="input" placeholder="New Item ...">
-                <button id="button" onclick="clicked()">Add</button>
+                <button id="button">Add</button>
             </div>
         </div>
 
     </div>
 
-    <script>
-        let input = document.getElementById("input");
-
-        function clicked() {
-            let newElement = document.createElement("p");
-            let content = document.createTextNode(input.value);
-            newElement.appendChild(content);
-
-            let Box = document.getElementById("d2");
-            Box.appendChild(newElement);
-            input.value = "";
-
-            newElement.onclick = function () {
-                newElement.remove();
-            }
-        }
-
-
-    </script>
+    <script type="text/javascript" src="dist/index.js"></script>
 
 </body>
-
 </html>
