@@ -8,17 +8,15 @@ import { Contact} from './contact';
 })
 export class ContactComponentComponent {
   
-  // @Input()
-  // backgroundImage : string = "url('../../assets/gon.png')";
+  @Input()
+  contact : Contact;
 
   constructor() { 
 
   }
 
   getUrl(){
-   // return this.backgroundImage;
+    return this.contact.ImgUrl;
   }
-  @Input()
-  name : string;
-
+  
 }

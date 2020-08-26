@@ -1,9 +1,9 @@
-<div class="center">
+<div>
     <div class="mainDiv">
         <div class="profile" [ngStyle]="{'background-image': getUrl()}"></div>
         <div class="nameAdress">
-            <p id="title">{{name}}</p>
-            <p id="add"></p>
+            <p id="title">{{contact.Title}}. {{contact.Name}}</p>
+            <p id="add">{{contact.Address}}</p>
         </div>
     </div>
 </div>
