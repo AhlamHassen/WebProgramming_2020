@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'simpleContact';
+  
+ showContacts :boolean = false;
+  
+ contact: string[] = ["ahlam", "hassen", "saleh"];
+
+ onToggle() : void{
+   this.showContacts = !this.showContacts;
+ }
+
+ // @Input()
+  // contact : Contact[] = [ 
+  //   new Contact("Mr", "Gon Freecs", "123 Somewhere in Japan", "url('assets/squidward.png')")
+    
+  // ];
+
 }

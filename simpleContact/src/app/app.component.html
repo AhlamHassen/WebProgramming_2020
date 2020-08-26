@@ -1,7 +1,8 @@
-<app-contact-component title="Mr. Gon Freecs" ></app-contact-component>
-<app-contact-component title="Ms. Ahlam Hassen" address="20 Queen's Street, fitzroy"
-backgroundImage="url('assets/squidward.png')"></app-contact-component>
-<app-contact-component title="Mr. Kilua Zoldiyc" address="123 Somewhere in the mountains of Japan"
-backgroundImage="url('assets/killua.jpg')"></app-contact-component>
-<app-contact-component title="Unkown" address="1212 Some Unkown location in melbourne"
-backgroundImage="url('assets/profile.png')"></app-contact-component>
+<button (click)="onToggle()">Toggle Contacts</button>
+
+<div *ngIf="showContacts === true">
+    <app-contact-component name = "ahlam"></app-contact-component>
+    <app-contact-component name = "ahlam"></app-contact-component>
+    <app-contact-component name = "ahlam"></app-contact-component>
+
+</div>
