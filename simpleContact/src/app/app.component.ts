@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   
- showContacts :boolean = false;
+ showContacts :boolean = true;
   
  contact: string[] = ["ahlam", "hassen", "saleh"];
 

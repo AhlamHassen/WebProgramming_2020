@@ -1,8 +1,9 @@
 <button (click)="onToggle()">Toggle Contacts</button>
 
-<div *ngIf="showContacts === true">
-    <app-contact-component name = "ahlam"></app-contact-component>
-    <app-contact-component name = "ahlam"></app-contact-component>
-    <app-contact-component name = "ahlam"></app-contact-component>
-
+<div *ngIf="showContacts === true" >
+  <ul>
+      <li *ngFor="let conta of contact">
+        <app-contact-component name = {{conta}}></app-contact-component>
+      </li>
+  </ul>
 </div>
